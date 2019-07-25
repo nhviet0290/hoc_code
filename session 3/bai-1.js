@@ -1,0 +1,1 @@
+let ten = promt
