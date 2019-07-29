@@ -42,10 +42,40 @@
     
 // }
 
+// let pw = prompt("Moi nhap mat khau : ");
+// while (pw.length < 8) {
+//     pw = prompt("Mat khau chua phai nhieu hon 8 ky tu, vui long nhap lai : ");
+// }
+// console.log(`Mat khau la ${pw}`);
+
+HOME WORK
+B1:
 let pw = prompt("Moi nhap mat khau : ");
-while (pw.length < 8) {
+while (pw.length < 8 ) {
     pw = prompt("Mat khau chua phai nhieu hon 8 ky tu, vui long nhap lai : ");
+}
+while (pw.indexOf("%") < 0 && pw.indexOf("$") < 0 && pw.indexOf("_") < 0) {
+    pw = prompt("Mat khau chua phai chua ky tu %$_, vui long nhap lai : ");
 }
 console.log(`Mat khau la ${pw}`);
 
+B2
+let dai = prompt("Nhap vao chieu dai: ");
+let rong = prompt("Nhap vao chieu rong: ");
+let ve = "";
+for (let index = 0; index < Number(dai); index++) {
+    ve = ve + "*";
+    
+}
+for (let index = 0; index < Number(rong); index++) {
+       console.log(ve);
+}
 
+B3
+let dai_canh = prompt("Nhap vao chieu dai: ");
+let ve = "";
+for (let index = 0; index < Number(dai_canh); index++) {
+    ve = ve + "*";
+    console.log(ve);
+    
+}
