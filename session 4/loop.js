@@ -48,34 +48,48 @@
 // }
 // console.log(`Mat khau la ${pw}`);
 
-HOME WORK
-B1:
-let pw = prompt("Moi nhap mat khau : ");
-while (pw.length < 8 ) {
-    pw = prompt("Mat khau chua phai nhieu hon 8 ky tu, vui long nhap lai : ");
-}
-while (pw.indexOf("%") < 0 && pw.indexOf("$") < 0 && pw.indexOf("_") < 0) {
-    pw = prompt("Mat khau chua phai chua ky tu %$_, vui long nhap lai : ");
-}
-console.log(`Mat khau la ${pw}`);
+// 
+// let x = prompt("Nhap gia tri x");
+// let y = 4 * (x * x + 10 * x * Math.sqrt(x) + 3 * x + 1);
+// console.log(y);
 
-B2
-let dai = prompt("Nhap vao chieu dai: ");
-let rong = prompt("Nhap vao chieu rong: ");
-let ve = "";
-for (let index = 0; index < Number(dai); index++) {
-    ve = ve + "*";
-    
-}
-for (let index = 0; index < Number(rong); index++) {
-       console.log(ve);
-}
+// let pw = prompt("Moi nhap mat khau : ");
+// while (pw.length < 8) {
+//     pw = prompt("Mat khau chua phai nhieu hon 8 ky tu, vui long nhap lai : ");
+// }
+// while ((Number(pw.indexOf("%")) + Number(pw.indexOf("_")) + Number(pw.indexOf("&"))) < -2) {
+//     pw = prompt("Mat khau cthieu ky tu %&_, vui long nhap lai : ");
+// }
+// console.log(`Mat khau cua ban la ${pw}`);
 
-B3
-let dai_canh = prompt("Nhap vao chieu dai: ");
-let ve = "";
-for (let index = 0; index < Number(dai_canh); index++) {
-    ve = ve + "*";
-    console.log(ve);
+// B2:
+// let dai = prompt("Nhap chieu dai");
+// let rong = prompt("Nhap chieu rong");
+// let ve = "*";
+// let hinhchunhat="";
+
+// for (let index = 1; index < Number(dai); index++) {
+//     ve = ve + "*";
+// }
+// for (let index = 0; index < Number(rong); index++) {
+//     hinhchunhat += ve + "\n";
+// }
+
+// console.log(hinhchunhat);
+
+// B3
+// let canh = prompt("Nhap chieu dai");
+// let ve = "";
+// let tamgiac="";
+// for (let index = 0; index < Number(canh); index++) {
+//     ve += "*";
+//     tamgiac += ve + "\n"; 
     
-}
+// }
+// for (let index = 1; index < Number(canh) ; index++) {
+//     ve = ve.slice (0,ve.length - 1);
+//     tamgiac += ve + "\n";
+   
+//     }
+// console.log(tamgiac);
+
