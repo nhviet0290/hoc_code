@@ -22,27 +22,34 @@
 // console.log(y1);
 // console.log(y2);
 
-//B4
-let sotien = Number(prompt("Nhap so tien can gui: "));
-let to100 = Math.floor(sotien/ 100000);
-let du100 = sotien - to100 * 100000 ;
-let to50 = Math.floor(du100/ 50000);
-let du50 = du100 - to50 * 50000;
-let to20 = Math.floor(du50/ 20000);
-let du20 = du50 - to20 * 20000 ;
-let to10 = Math.floor(du20 / 10000);
-if (du100 > 0 ) {
-    if (du50 > 0) {
-        if (du20 > 0) {
-            console.log("So tien doi thanh :" + to100 + " tờ 100k " + to50 + " tờ 50k " + to20 + " tờ 20k " + to10 + " tờ 10k ");
+// //B4
+// let sotien = Number(prompt("Nhap so tien can gui: "));
+// let to100 = Math.floor(sotien/ 100000);
+// let du100 = sotien - to100 * 100000 ;
+// let to50 = Math.floor(du100/ 50000);
+// let du50 = du100 - to50 * 50000;
+// let to20 = Math.floor(du50/ 20000);
+// let du20 = du50 - to20 * 20000 ;
+// let to10 = Math.floor(du20 / 10000);
+// if (du100 > 0 ) {
+//     if (du50 > 0) {
+//         if (du20 > 0) {
+//             console.log("So tien doi thanh :" + to100 + " tờ 100k " + to50 + " tờ 50k " + to20 + " tờ 20k " + to10 + " tờ 10k ");
             
-        } else { 
-            console.log("So tien doi thanh :" + to100 + " tờ 100k " + to50 + " tờ 50k " + to20 + " tờ 20k ");
+//         } else { 
+//             console.log("So tien doi thanh :" + to100 + " tờ 100k " + to50 + " tờ 50k " + to20 + " tờ 20k ");
             
-        }
-    } else {
-        console.log("So tien doi thanh :" + to100 + " tờ 100k " + to50 + " tờ 50k " );
-    }
-} else {
-    console.log("So tien doi thanh :" + to100 + " tờ 100k ");
-}
+//         }
+//     } else {
+//         console.log("So tien doi thanh :" + to100 + " tờ 100k " + to50 + " tờ 50k " );
+//     }
+// } else {
+//     console.log("So tien doi thanh :" + to100 + " tờ 100k ");
+// }
+
+//B5
+// let x = Number(prompt("Nhap vao so x co 3 chu so"));
+// let hangtram = Math.floor(x/100);
+// let hangchuc = Math.floor((x - hangtram * 100) / 10);
+// let hangdonvi = x - hangtram * 100 - hangchuc * 10;
+// console.log(hangchuc + hangtram + hangdonvi);
