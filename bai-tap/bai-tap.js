@@ -47,9 +47,16 @@
 //     console.log("So tien doi thanh :" + to100 + " tờ 100k ");
 // }
 
-//B5
-// let x = Number(prompt("Nhap vao so x co 3 chu so"));
-// let hangtram = Math.floor(x/100);
-// let hangchuc = Math.floor((x - hangtram * 100) / 10);
-// let hangdonvi = x - hangtram * 100 - hangchuc * 10;
-// console.log(hangchuc + hangtram + hangdonvi);
+//SS2+3
+// B1
+// for (let index = 0; index <= 100; index++) {
+//     console.log(index);
+    
+    
+// }
+
+// //B2
+// for (let index = 100; index >= 0; index--) {
+//     console.log(index);
+    
+// }
