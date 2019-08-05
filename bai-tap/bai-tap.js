@@ -60,3 +60,17 @@
 //     console.log(index);
     
 // }
+//B3
+// for (let index = 1; index <= 100 ; index+= + 2) {
+//     console.log(index);
+// }
+// for (let index = 0; index <= 100 ; index+= + 2) {
+//     console.log(index);
+// }
+//B4
+// for (let index = 100; index >= 0; index -= 2) {
+//     console.log(index);
+// }
+// for (let index = 99; index >= 0; index -= 2) {
+//     console.log(index);
+// }
