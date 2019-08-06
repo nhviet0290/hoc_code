@@ -74,3 +74,45 @@
 // for (let index = 99; index >= 0; index -= 2) {
 //     console.log(index);
 // }
+
+//SS5
+//B5
+let a = Number(prompt("Nhap gia tri canh tam giac: "));
+let b = Number(prompt("Nhap gia tri canh tam giac: "));
+let c = Number(prompt("Nhap gia tri canh tam giac: "));
+// let a = 4;
+// let b = 4;
+// let c = Math.sqrt(a*a + b*b);
+
+let min = Math.min(a,b,c);
+let max = Math.max(a,b,c);
+let mid = a +b + c - min - max;
+let can1  = min == mid;
+let can2  = max == mid;
+let vuong = max*max - mid*mid - min * min
+console.log(min);
+console.log(max);
+console.log(vuong);
+
+
+if (can1 == true && can2 == true) {
+    console.log("Tam giac deu");
+    
+} else if (can1 == true || can2 == true) {
+    if (vuong == 0) {
+        console.log("Tam giac vuong can");
+        
+    }
+    else {
+        console.log("Tam giac can");
+        
+    }
+} else {
+    if (vuong ==0) {
+        console.log("Tam giac vuong");
+        
+    } else {
+        console.log("Tam giac k vuong, can, deu");
+        
+    }
+}
