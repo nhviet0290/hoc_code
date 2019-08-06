@@ -64,37 +64,62 @@
         
 //     }
 // Homework
-let a = Number(prompt("Nhap vao gia tri a: "));
-let b = Number(prompt("Nhap vao gia tri b: "));
-let c = Number(prompt("Nhap vao gia tri c: "));
+// let a = Number(prompt("Nhap vao gia tri a: "));
+// let b = Number(prompt("Nhap vao gia tri b: "));
+// let c = Number(prompt("Nhap vao gia tri c: "));
 
-if (a == 0) {
-    if (b==0) {
-        if (c==0) {
-            console.log("Phuong trinh vo so nghiem");
+// if (a == 0) {
+//     if (b==0) {
+//         if (c==0) {
+//             console.log("Phuong trinh vo so nghiem");
             
-        }
-        else{
-            console.log("Phuong trinh vo nghiem");
+//         }
+//         else{
+//             console.log("Phuong trinh vo nghiem");
             
-        }
-    }
-     else {
-         console.log("nghiem x cua phuong trinh la ") + -c/b;
+//         }
+//     }
+//      else {
+//          console.log("nghiem x cua phuong trinh la ") + -c/b;
          
-     }
-}
-else{
-    let delta = b*b - 4*a*c;
-    if (delta < 0) {
-        console.log("Phuong trinh vo nghiem");
+//      }
+// }
+// else{
+//     let delta = b*b - 4*a*c;
+//     if (delta < 0) {
+//         console.log("Phuong trinh vo nghiem");
         
-    }
-    else if (delta == 0) {
-        console.log("Phuong trinh co nghiem x bang: " + -b/(2*a));
-    }
-    else {
-        console.log("Phuong trinh co 2 nghiem la " + ((-b + Math.sqrt(delta))/(2*a)) + " va " + ((-b - Math.sqrt(delta))/(2*a)));
+//     }
+//     else if (delta == 0) {
+//         console.log("Phuong trinh co nghiem x bang: " + -b/(2*a));
+//     }
+//     else {
+//         console.log("Phuong trinh co 2 nghiem la " + ((-b + Math.sqrt(delta))/(2*a)) + " va " + ((-b - Math.sqrt(delta))/(2*a)));
 
-    }
-    }
+//     }
+//     }
+
+//Nhap thang , in ra so ngay
+let month = Number(prompt("Nhap thang"));
+
+switch (month) {
+    case 1:
+    case 3:
+    case 5:
+    case 8:
+    case 10:
+    case 12:
+        console.log("Thang 1 co 31 ngay");
+        
+        // break;
+    case 2:
+        console.log("Thang 2 co 28 ngay");
+            
+        break;
+    case 3:
+        console.log("Thang 3 co 31 ngay");
+        break;
+    default:
+        console.log("Nhap sai thang:");
+        
+}
