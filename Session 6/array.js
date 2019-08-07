@@ -58,37 +58,3 @@
 // delete array2[3];
 // array2.pop(); //xoa o cuoi cung
 // array2.shift(); // xoa o dau tien
-let menu = "Menu: \n" +
-            "1. Danh sach sach trong thu vien\n" +
-            "2. Them sach\n" +
-            "3. Doi ten sach\n" +
-            "4. Xoa sach\n" +
-            "5. Thoat";
-let isExit = false;
-while (condition) {
-    console.log(menu);
-    let chon = prompt("Chon Menu")
-    switch (chon) {
-        case 1:
-            alert("1")    
-            break;
-        case 2:
-            alert("2")    
-            break;
-        case 3:
-            alert("3")    
-            break;
-        case 4:
-            alert("4")    
-            break;
-        case 5:
-            alert("Cam on cac ban")    
-            break;    
-        default:
-            alert("Nhap lai menu")
-            break;
-    }
-if(isExit){
-    break;
-    }
-}
