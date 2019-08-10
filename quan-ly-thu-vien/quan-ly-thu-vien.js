@@ -6,7 +6,7 @@ let menu = "Menu: \n"+
             "5. Thoát";
 
 let message = menu + "\nChọn menu: "
-let listBook=["a","Ba vạn dặm dưới đáy biển","c"];
+let listBook=["Sách 1","Sách 2","Sách 3"];
 let showBook ="";
 
 while(true){
@@ -36,7 +36,7 @@ while(true){
                 
             }
             break;
-        case 3:
+        case 3:{
             for (let index = 0; index < listBook.length; index++) {
                 showBook += (index+1) + ". "+ listBook[index] +"\n";
                 
@@ -61,24 +61,27 @@ while(true){
                     alert("Tên sách đã được sửa thành: " + listBook[sttBook -1 ] );
                 }              
             break;
+        }
         case 4:
             for (let index = 0; index < listBook.length; index++) {
                 showBook += (index+1) + ". "+ listBook[index] +"\n";
                 
             }
-            let sttBookDel = Number(prompt("Danh sách sách là: \n" +showBook + "Chọn số thứ tự sách bạn muốn xóa tên: " ));
+            sttBook = Number(prompt("Danh sách sách là: \n" +showBook + "Chọn số thứ tự sách bạn muốn xóa tên: " ));
+             console.log("a");
+                
             showBook="";
-            while (sttBookDel < 1 || sttBookDel > listBook.length) {
+            while (sttBook < 1 || sttBook > listBook.length) {
                 for (let index = 0; index < listBook.length; index++) {
                     showBook += (index+1) + ". "+ listBook[index] +"\n";
                     
                 }    
-                sttBookDel = Number(prompt("Danh sách sách là: \n" +showBook + "Bạn đã nhập sai STT sách, mời nhập lại: " ))
+                sttBook = Number(prompt("Danh sách sách là: \n" +showBook + "Bạn đã nhập sai STT sách, mời nhập lại: " ))
                 showBook="";
 
             }
-            alert("Đã xóa cuốn sách số: " + sttBookDel + " tên là: " + listBook[sttBookDel - 1]);
-            listBook.splice(sttBookDel-1,1);
+            alert("Đã xóa cuốn sách số: " + sttBook + " tên là: " + listBook[sttBook - 1]);
+            listBook.splice(sttBook-1,1);
             for (let index = 0; index < listBook.length; index++) {
                 showBook += (index+1) + ". "+ listBook[index] +"\n";
                 
@@ -98,3 +101,10 @@ while(true){
     }
 }
 alert("Cam on ban!");
+
+Bai tap: Quan ly sách : Ten + So luong + gia ban, 
+nếu thêm sách mới, tên trùng +số lượng tăng lên
+Mục 5 :mượn sách + sô lượng mượn => giảm sách
+Mục 6 : Thống kê số lượng sách, giá trị của từng loại, tổng giá trị
+Mục 7: Sắp xếp theo số lượng, theo gia trị, theo tổng giá trị
+Mục 8: Thoát
