@@ -6,7 +6,7 @@ let menu = "Menu: \n"+
             "5. Thoát";
 
 let message = menu + "\nChọn menu: "
-let listBook=["Sách 1","Sách 2","Sách 3"];
+let listBook=["sach 1"];
 let showBook ="";
 
 while(true){
@@ -20,21 +20,33 @@ while(true){
             }
             else {
                 for (let index = 0; index < listBook.length; index++) {
-                    showBook += (index+1) + ". "+ listBook[index] +"\n";
+                    showBook += (index+1) + ". "+ listBook[index].tenSach +"\n";
                     
                 }
                 
-                alert("Danh sách sách là: \n" + showBook);
+                console.log("Danh sách sách là: \n" + showBook);
                 showBook="";
             }
             break;
         case 2:
-            let addBook = Number(prompt("Bạn muốn thêm vào mấy cuốn sách"));
-            for (let index = 0; index < addBook; index++) {
-                let newBook = prompt("Mời bạn nhập tên sách: ");
+                let newBook = prompt("Nhap ten sach");
+                newBook = {};
+                newBook.tenSach = newBook;
+                newBook.soLuong = Number(prompt("Nhap so luong sach: "));
+                newBook.giaBan = Number(prompt("Nhap gia ban: "));
+                newBook.tongGiaTri = newBook.soLuong * newBook.giaBan;
                 listBook.push(newBook);
+                console.log(listBook[listBook.indexOf(newBook.tenSach)].soLuong);
                 
-            }
+                if ((listBook.indexOf(newBook.tenSach)) >= 0 ) {
+                    
+                    
+                    
+                } else {
+                    listBook.push(newBook.tenSach);
+                }
+                
+                            
             break;
         case 3:{
             for (let index = 0; index < listBook.length; index++) {
@@ -102,9 +114,9 @@ while(true){
 }
 alert("Cam on ban!");
 
-Bai tap: Quan ly sách : Ten + So luong + gia ban, 
-nếu thêm sách mới, tên trùng +số lượng tăng lên
-Mục 5 :mượn sách + sô lượng mượn => giảm sách
-Mục 6 : Thống kê số lượng sách, giá trị của từng loại, tổng giá trị
-Mục 7: Sắp xếp theo số lượng, theo gia trị, theo tổng giá trị
-Mục 8: Thoát
+// Bai tap: Quan ly sách : Ten + So luong + gia ban, 
+// nếu thêm sách mới, tên trùng +số lượng tăng lên
+// Mục 5 :mượn sách + sô lượng mượn => giảm sách
+// Mục 6 : Thống kê số lượng sách, giá trị của từng loại, tổng giá trị
+// Mục 7: Sắp xếp theo số lượng, theo gia trị, theo tổng giá trị
+// Mục 8: Thoát
