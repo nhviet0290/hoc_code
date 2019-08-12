@@ -6,7 +6,7 @@ let menu = "Menu: \n"+
             "5. Thoát";
 
 let message = menu + "\nChọn menu: "
-let listBook=["sach 1"];
+let listBook=[a = {tenSach:"sach 1",soLuong:2, giaBan:2}];
 let showBook ="";
 
 while(true){
@@ -29,23 +29,28 @@ while(true){
             }
             break;
         case 2:
-                let newBook = prompt("Nhap ten sach");
-                newBook = {};
-                newBook.tenSach = newBook;
-                newBook.soLuong = Number(prompt("Nhap so luong sach: "));
-                newBook.giaBan = Number(prompt("Nhap gia ban: "));
-                newBook.tongGiaTri = newBook.soLuong * newBook.giaBan;
-                listBook.push(newBook);
-                console.log(listBook[listBook.indexOf(newBook.tenSach)].soLuong);
-                
-                if ((listBook.indexOf(newBook.tenSach)) >= 0 ) {
-                    
-                    
-                    
-                } else {
-                    listBook.push(newBook.tenSach);
+                let newBook = {
+                tenSach : prompt("Nhap ten sach"),
+                soLuong : Number(prompt("Nhap so luong sach: ")),
+                giaBan : Number(prompt("Nhap gia ban: "))
                 }
+                let soDauSach = listBook.length;
+                let nameBook = [];
+                for (let index = 0; index < listBook.length; index++) {
+                    nameBook.push(listBook[index].tenSach)
+                    
+                    
+                }
+                console.log(nameBook);
                 
+                    
+                
+                
+                
+                // console.log((listBook[listBook.length - 1]).tenSach); // lấy ra tên sách
+                
+                
+                                
                             
             break;
         case 3:{
