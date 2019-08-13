@@ -133,12 +133,14 @@ while(true){
         case 6: 
         let thongKe ="";
         for (let index = 0; index < listBook.length; index++) {
-            thongKe = (index + 1) + ". Sách " + listBook[index].tenSach + " số lượng: " +listBook[index].soLuong + " giá bán: " + listBook[index].giaBan + " tổng giá trị: "+ listBook[index].tongTien + "\n" ;   
+            thongKe += (index + 1) + ". Sách " + listBook[index].tenSach + " số lượng: " +listBook[index].soLuong + " giá bán: " + listBook[index].giaBan + " tổng giá trị: "+ listBook[index].tongTien + "\n" ;   
         }
         console.log(thongKe);
                     
         break;
         case 7:
+        //sort theo so luong
+
 
             break;        
         case 8:
