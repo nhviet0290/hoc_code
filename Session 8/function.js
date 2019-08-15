@@ -169,7 +169,7 @@ let nhap ={
 }
 
 
-function themSach(object,array) {
+function inputBook(object,array) {
     for (let index = 0; index < array.length; index++) {
         let sach = array[index];
         for (const tenSach in sach) {

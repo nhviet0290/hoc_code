@@ -12,20 +12,24 @@ let listBook=[{tenSach:"sach 1",soLuong:5, giaBan:2, tongTien:10}];
 let showBook ="";
 
 function themSach(object,array) {
-    for (let index = 0; index < array.length; index++) {
-        let sach = array[index];
-        for (const tenSach in sach) {
-            if (sach.hasOwnProperty(tenSach)) {
-                if (object.tenSach == sach[tenSach]) {
-                    array[index].soLuong += object.soLuong;                             
-                } else{
-                    array.push(object);
-                }
-            }
-        }
+    let sach =[];
+    for (let index = 0; index <= (array.length -1); index++) {
+        sach[index] = array[index].tenSach;}
+        
+    if (sach.indexOf(object.tenSach) <0 ) {
+        array.push(object);                     
+    } else{
+        let i = sach.indexOf(object.tenSach);
+        array[i].soLuong += object.soLuong;
+        array[i].tongTien = array[i].soLuong * array[i].giaBan;
     }
 }
 
+function isNumber(value) {
+    while (!(value > 0)) {
+        value = Number (prompt("Nhap bang so: "))
+    }
+}
 while(true){
     let choose = Number(prompt(message));
     let isExit = false;
@@ -46,25 +50,14 @@ while(true){
             }
             break;
         case 2:
-            let themSach = {
-            tenSach : prompt("Nhap ten sach"),
-            soLuong : Number(prompt("Nhap so luong sach: ")),
-            giaBan : Number(prompt("Nhap gia ban: "))
-            }
-            themSach.tongTien = themSach.soLuong * themSach.giaBan;
-            let nameBook =[];
-            for (let index = 0; index < listBook.length; index++) {
-                nameBook[index] = listBook[index].tenSach ;   
-            }
-                                        
-            if (nameBook.indexOf(themSach.tenSach) >= 0) {
-                listBook[nameBook.indexOf(themSach.tenSach)].soLuong += themSach.soLuong;
-                // console.log(listBook[nameBook.indexOf(themSach.tenSach)].soLuong); //Tinh ra so luong sach
-                listBook[nameBook.indexOf(themSach.tenSach)].tongTien += themSach.tongTien;
-            } else {
-                listBook.push(themSach);
-            }            
-            nameBook=[];                                                    
+            let inputBook = {};
+            inputBook.tenSach = prompt("Nhap ten sach");
+            inputBook.soLuong = Number(prompt("Nhap so luong sach: "));
+            isNumber(inputBook.soLuong);
+            inputBook.giaBan = Number(prompt("Nhap gia ban: "));
+            isNumber(inputBook.giaBan);
+            inputBook.tongTien = inputBook.soLuong * inputBook.giaBan;
+            themSach(inputBook, listBook);                                          
             break;
         case 3:{
             for (let index = 0; index < listBook.length; index++) {
