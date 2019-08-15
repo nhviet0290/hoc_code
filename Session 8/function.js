@@ -116,38 +116,80 @@
 // xMuY(x,y);
 
 //Function in thông tin tung sinh vien tu danh sach
-function inThongtin(array) {
-    for (let index = 0; index < array.length; index++) {
-        let object = array[index];
-        inSinhVien(object);
-    }
+// function inThongtin(array) {
+//     for (let index = 0; index < array.length; index++) {
+//         let object = array[index];
+//         inSinhVien(object);
+//     }
+// }
+
+// function inSinhVien(object) {
+//     for (const key in object) {
+//         if (object.hasOwnProperty(key)) {
+//             print(key + " là: " +object[key]);              
+//         }
+//     }
+// }
+// function print(message) {
+//     alert(message);
+// }
+// let danhSachSV =[];
+// let sv1 = {
+//     name : "Nguyen Van A",
+//     class : "10A"
+// }
+// let sv2 = {
+//     name : "Nguyen Van B",
+//     class : "10B"
+// }
+// let sv3 = {
+//     name : "Nguyen Van C",
+//     class : "10C"
+// }
+// danhSachSV.push(sv1);
+// danhSachSV.push(sv2);
+// danhSachSV.push(sv3);
+
+// inThongtin(danhSachSV)
+
+let sach =[];
+let sach1 = {
+    tenSach : "sach 1",
+    soLuong : 3
+}
+let sach2 = {
+    tenSach : "sach 2",
+    soLuong : 5
+}
+sach.push(sach1);
+sach.push(sach2);
+let nhap ={
+    tenSach : prompt("Nhap ten sach"),
+    soLuong : Number(prompt("Nhap so luong"))
 }
 
-function inSinhVien(object) {
-    for (const key in object) {
-        if (object.hasOwnProperty(key)) {
-            print(key + " là: " +object[key]);              
+
+function themSach(object,array) {
+    for (let index = 0; index < array.length; index++) {
+        let sach = array[index];
+        for (const tenSach in sach) {
+            if (sach.hasOwnProperty(tenSach)) {
+                if (object.tenSach == sach[tenSach]) {
+                    array[index].soLuong += object.soLuong;
+                    console.log(array[index].soLuong);
+                    
+                }
+                
+            }
         }
     }
 }
-function print(message) {
-    alert(message);
-}
-let danhSachSV =[];
-let sv1 = {
-    name : "Nguyen Van A",
-    class : "10A"
-}
-let sv2 = {
-    name : "Nguyen Van B",
-    class : "10B"
-}
-let sv3 = {
-    name : "Nguyen Van C",
-    class : "10C"
-}
-danhSachSV.push(sv1);
-danhSachSV.push(sv2);
-danhSachSV.push(sv3);
 
-inThongtin(danhSachSV)
+
+function checkNumber(value) {
+    if (typeof value !== "number") {
+        
+    } else {
+        
+    }
+}

@@ -11,6 +11,21 @@ let message = menu + "\nChọn menu: "
 let listBook=[{tenSach:"sach 1",soLuong:5, giaBan:2, tongTien:10}];
 let showBook ="";
 
+function themSach(object,array) {
+    for (let index = 0; index < array.length; index++) {
+        let sach = array[index];
+        for (const tenSach in sach) {
+            if (sach.hasOwnProperty(tenSach)) {
+                if (object.tenSach == sach[tenSach]) {
+                    array[index].soLuong += object.soLuong;                             
+                } else{
+                    array.push(object);
+                }
+            }
+        }
+    }
+}
+
 while(true){
     let choose = Number(prompt(message));
     let isExit = false;
