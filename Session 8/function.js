@@ -169,27 +169,27 @@ let nhap ={
 }
 
 
-function inputBook(object,array) {
-    for (let index = 0; index < array.length; index++) {
-        let sach = array[index];
-        for (const tenSach in sach) {
-            if (sach.hasOwnProperty(tenSach)) {
-                if (object.tenSach == sach[tenSach]) {
-                    array[index].soLuong += object.soLuong;
-                    console.log(array[index].soLuong);
-                    
-                }
-                
-            }
-        }
-    }
-}
-
-
-function checkNumber(value) {
-    if (typeof value !== "number") {
-        
-    } else {
+function themSach(object,array) {
+   
+    inTenSach(array) ;
+    if (sach.indexOf(object.tenSach) <0 ) {
+        array.push(object);                     
+    } else{
+        let i = sach.indexOf(object.tenSach);
+        array[i].soLuong += object.soLuong;
+        array[i].tongTien = array[i].soLuong * array[i].giaBan;
+        console.log( array[i].soLuong);
         
     }
 }
+
+function inTenSach(array) {
+    let danhSachSach =[];
+    for (let index = 0; index <= (array.length -1); index++) {
+        danhSachSach[index] = array[index].tenSach;
+        
+}
+
+}
+inTenSach(sach);
+console.log(danhSachSach);

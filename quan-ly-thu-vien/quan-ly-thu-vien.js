@@ -30,6 +30,16 @@ function isNumber(value) {
         value = Number (prompt("Nhap bang so: "))
     }
 }
+function xoaSach(string, array) {
+    for (let index = 0; index < array.length; index++) {
+        if (array[index].tenSach == string) {
+            array.splice(index,1);
+            
+        }
+        
+    }
+    
+}
 while(true){
     let choose = Number(prompt(message));
     let isExit = false;
