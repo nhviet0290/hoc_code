@@ -152,44 +152,61 @@
 
 // inThongtin(danhSachSV)
 
-let sach =[];
-let sach1 = {
-    tenSach : "sach 1",
-    soLuong : 3
-}
-let sach2 = {
-    tenSach : "sach 2",
-    soLuong : 5
-}
-sach.push(sach1);
-sach.push(sach2);
-let nhap ={
-    tenSach : prompt("Nhap ten sach"),
-    soLuong : Number(prompt("Nhap so luong"))
-}
+// let sach =[];
+// let sach1 = {
+//     tenSach : "sach 1",
+//     soLuong : 3
+// }
+// let sach2 = {
+//     tenSach : "sach 2",
+//     soLuong : 5
+// }
+// sach.push(sach1);
+// sach.push(sach2);
+// let nhap ={
+//     tenSach : prompt("Nhap ten sach"),
+//     soLuong : Number(prompt("Nhap so luong"))
+// }
 
+//nhap 2 so a,b 
+// function tinhTong(a, b) {
+//     return a + b;
+// }
 
-function themSach(object,array) {
-   
-    inTenSach(array) ;
-    if (sach.indexOf(object.tenSach) <0 ) {
-        array.push(object);                     
-    } else{
-        let i = sach.indexOf(object.tenSach);
-        array[i].soLuong += object.soLuong;
-        array[i].tongTien = array[i].soLuong * array[i].giaBan;
-        console.log( array[i].soLuong);
+// alert(tinhTong(5,10));
+
+// function soNguyenTo(a) {
+//     let count = 0;
+//     for (let index = 1; index < a; index++) {
+//         if(a % index == 0){
+//             count++
+//         }
+//         if (count >2) {
+//             return false;
+//         } 
+//         }
+//         return true;
+//     }
+
+// let ketQua = soNguyenTo(10);
+// if (ketQua){
+//     console.log("là so nguyen to");
+    
+// }else{
+//     console.log("k la so nguyen to");
+    
+// }
+
+// function timUoc(n) {
+//     let danhSachUoc =[];
+//     for (let index = 1; index <= n; index++) {
+//         if (n % index == 0) {
+//             danhSachUoc.push(index);
+//         }
         
-    }
-}
+//     } return danhSachUoc;   
+// }
 
-function inTenSach(array) {
-    let danhSachSach =[];
-    for (let index = 0; index <= (array.length -1); index++) {
-        danhSachSach[index] = array[index].tenSach;
-        
-}
+// let show = timUoc(100);
+// console.log(show);
 
-}
-inTenSach(sach);
-console.log(danhSachSach);

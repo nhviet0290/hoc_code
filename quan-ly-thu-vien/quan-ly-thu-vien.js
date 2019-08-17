@@ -9,65 +9,19 @@ let menu = "Menu: \n"+
             "8. Thoát\n";
 let message = menu + "\nChọn menu: "
 let listBook=[{tenSach:"sach 1",soLuong:5, giaBan:2, tongTien:10}];
-let showBook ="";
+let book={};
+let danhSach =[{'name':"sach 1",soLuong:5, giaBan:2, tongTien:10}]
 
-function themSach(object,array) {
-    let sach =[];
-    for (let index = 0; index <= (array.length -1); index++) {
-        sach[index] = array[index].tenSach;}
-        
-    if (sach.indexOf(object.tenSach) <0 ) {
-        array.push(object);                     
-    } else{
-        let i = sach.indexOf(object.tenSach);
-        array[i].soLuong += object.soLuong;
-        array[i].tongTien = array[i].soLuong * array[i].giaBan;
-    }
-}
 
-function isNumber(value) {
-    while (!(value > 0)) {
-        value = Number (prompt("Nhap bang so: "))
-    }
-}
-function xoaSach(string, array) {
-    for (let index = 0; index < array.length; index++) {
-        if (array[index].tenSach == string) {
-            array.splice(index,1);
-            
-        }
-        
-    }
-    
-}
 while(true){
     let choose = Number(prompt(message));
     let isExit = false;
     switch(choose){
         case 1:
-            if (listBook.length == 0) {
-                alert("Hiện tại chưa có cuốn sách nào");
-                
-            }
-            else {
-                for (let index = 0; index < listBook.length; index++) {
-                    showBook += (index+1) + ". "+ listBook[index].tenSach +"\n";
-                    
-                }
-                
-                console.log("Danh sách sách là: \n" + showBook);
-                showBook="";
-            }
+            printListBook();
             break;
         case 2:
-            let inputBook = {};
-            inputBook.tenSach = prompt("Nhap ten sach");
-            inputBook.soLuong = Number(prompt("Nhap so luong sach: "));
-            isNumber(inputBook.soLuong);
-            inputBook.giaBan = Number(prompt("Nhap gia ban: "));
-            isNumber(inputBook.giaBan);
-            inputBook.tongTien = inputBook.soLuong * inputBook.giaBan;
-            themSach(inputBook, listBook);                                          
+            addNewBook()                            
             break;
         case 3:{
             for (let index = 0; index < listBook.length; index++) {
@@ -96,32 +50,34 @@ while(true){
             break;
         }
         case 4:
-            for (let index = 0; index < listBook.length; index++) {
-                showBook += (index+1) + ". "+ listBook[index] +"\n";
+            // for (let index = 0; index < listBook.length; index++) {
+            //     showBook += (index+1) + ". "+ listBook[index] +"\n";
                 
-            }
-            sttBook = Number(prompt("Danh sách sách là: \n" +showBook + "Chọn số thứ tự sách bạn muốn xóa tên: " ));
-             console.log("a");
+            // }
+            // sttBook = Number(prompt("Danh sách sách là: \n" +showBook + "Chọn số thứ tự sách bạn muốn xóa tên: " ));
+            //  console.log("a");
                 
-            showBook="";
-            while (sttBook < 1 || sttBook > listBook.length) {
-                for (let index = 0; index < listBook.length; index++) {
-                    showBook += (index+1) + ". "+ listBook[index] +"\n";
+            // showBook="";
+            // while (sttBook < 1 || sttBook > listBook.length) {
+            //     for (let index = 0; index < listBook.length; index++) {
+            //         showBook += (index+1) + ". "+ listBook[index] +"\n";
                     
-                }    
-                sttBook = Number(prompt("Danh sách sách là: \n" +showBook + "Bạn đã nhập sai STT sách, mời nhập lại: " ))
-                showBook="";
+            //     }    
+            //     sttBook = Number(prompt("Danh sách sách là: \n" +showBook + "Bạn đã nhập sai STT sách, mời nhập lại: " ))
+            //     showBook="";
 
-            }
-            alert("Đã xóa cuốn sách số: " + sttBook + " tên là: " + listBook[sttBook - 1]);
-            listBook.splice(sttBook-1,1);
-            for (let index = 0; index < listBook.length; index++) {
-                showBook += (index+1) + ". "+ listBook[index] +"\n";
+            // }
+            // alert("Đã xóa cuốn sách số: " + sttBook + " tên là: " + listBook[sttBook - 1]);
+            // listBook.splice(sttBook-1,1);
+            // for (let index = 0; index < listBook.length; index++) {
+            //     showBook += (index+1) + ". "+ listBook[index] +"\n";
                 
-            }
-            alert("Danh sách sách còn lại là: \n" + showBook);
-            showBook="";
-
+            // }
+            // alert("Danh sách sách còn lại là: \n" + showBook);
+            // showBook="";
+                let delBook = prompt("Nhap ten sach can xoa: ");
+                inListSach(listBook);
+                xoaSach(delBook, danhSach);
             break;
         case 5:
             let muonSach = {
@@ -179,3 +135,40 @@ alert("Cam on ban!");
 // Mục 6 : Thống kê số lượng sách, giá trị của từng loại, tổng giá trị
 // Mục 7: Sắp xếp theo số lượng, theo gia trị, theo tổng giá trị
 // Mục 8: Thoát
+
+function printListBook(params) {
+    if (danhSach.length == 0) {
+        print("Danh sách trống");
+        
+    }
+    else {
+        let m = "Danh sách: \n";
+        m = 'STT : BookDetail: ';
+        for (let index = 0; index < danhSach.length; index++) {
+            const book = danhSach[index];
+            m += '/n' + `${index +1}: Name: ${book.name}, price: ${book.price}, Amount: ${book.amount}`;
+            
+        }
+        prinpt(m)
+    }
+}
+function prinpt(message) {
+    alert(message);
+}
+
+function addNewBook() {
+    let newBookName = prompt("Nhập tên sách: ");
+    let newAmount = Number(prompt("Nhap số lượng sách: "));
+    for (let i = 0; i < danhSach.length; i++) {
+        const book = danhSach[i];
+        if(newBookName.toUpperCase() == book.name.toUpperCase()){
+            book.amount += newAmount;
+            return;
+        }
+        
+    }
+    let newPrice = Number(prompt("Nhập giá sách: "))
+    let newBook = getDefauleBook();
+    updateBook(newBook, newBookName, newPrice, newAmount);
+    danhsach.push(newBook);
+}

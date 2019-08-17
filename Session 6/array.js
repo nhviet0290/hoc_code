@@ -58,3 +58,12 @@
 // delete array2[3];
 // array2.pop(); //xoa o cuoi cung
 // array2.shift(); // xoa o dau tien
+let arr = [5,2,4,6,87,9];
+for (let i = 0; i < arr.length -1; i++) {
+    if (arr[i] >= arr[i+1]) {
+        let temp = arr[i];
+        arr[i] = arr[i+1];
+        arr[i+1] = temp;
+    }
+}
+console.log(arr);
