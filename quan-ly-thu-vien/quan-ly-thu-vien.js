@@ -6,7 +6,8 @@ let menu = "Menu: \n"+
             "5. Mượn sách\n" +
             "6. Thống kê số lượng sách từng loại, tổng gia trị\n" +
             "7. Sắp xếp theo số lượng, theo gia trị, theo tổng giá trị\n" +
-            "8. Thoát\n";
+            "8. Tìm kiếm:\n" +//tìm theo tên , số lượng, lọc theo đơn giá, lọc theo tổng giá trị
+            "9. Thoát";
 let message = menu + "\nChọn menu: "
 let danhSach =[{'name':"sach 1", 'price' :5, 'amount':2}]
 
@@ -34,13 +35,14 @@ while(true){
             break;
         case 6: 
             bookStats();
-        break;
+            break;
         case 7:
-        sortBook()
-
-
+            sortBook()
             break;        
         case 8:
+            findFilter();
+            break;
+        case 9:
             isExit = true;
             break;
         default:
@@ -125,7 +127,7 @@ function newPriceAmount() {
     updateBook(book, book.name, updatePrice, updateAmount);    
 }
 
-function delBook(params) {
+function delBook() {
     let listBook = printListBook(danhSach);
     let STT = Number(prompt(listBook + "\n Nhập STT sách cần xóa: "));
     while (STT <1 || STT > danhSach.length) {
@@ -165,72 +167,85 @@ function bookStats() {
 }
 
 function sortBook() {
+
+    let isExitSearch = false;    
+    while (true){
+    isExitSearch = false; 
     let listBook = printListBook(danhSach);
-    prinpt("Danh sách sách hiện tại là:" + listBook);
     let typeSort = Number(prompt("Chọn cách thức sắp xếp: \n" 
                                     +"1. Số lượng \n"
                                     +"2. Giá trị \n"
                                     +"3. Tổng giá trị"))
-        
     switch (typeSort) {
         case 1:
-            sortAmount();
+            let newSortAmount = danhSach.sort(sortAmount);
+            console.log(newSortAmount);
             break;
         case 2:
-            sortPrice();
+            let newSortPrice = danhSach.sort(sortPrice);
+            console.log(newSortPrice);
             break;
         case 3:
-            sortTotal();
+            let newSortTotal = danhSach.sort(sortTotal);
+            console.log(newSortTotal);
             break;
     
         default:
-            typeSort = Number(prompt("Nhập sai, xin mời nhập lại: \n" 
-                                        +"1. Số lượng \n"
-                                        +"2. Giá trị \n"
-                                        +"3. Tổng giá trị"))
+            isExitSearch = true;
             break;
     }
-}
-function sortAmount() {
-    let listBook = JSON.parse(JSON.stringify(danhSach));
-    for (let i = 0; i < listBook.length - 1; i++) {
-        for (let j = i+1; j < listBook.length; j++) {
-            if(listBook[i].amount > listBook[j].amount){
-                let temp = listBook[i];
-                listBook[i] = listBook[j];
-                listBook[j] = temp;
-            }
-        }
+    if(isExitSearch){
+        break;
     }
-    listBook = printListBook(listBook);
-    prinpt(listBook);
+}
+}
+function sortAmount(a, b) {
+    return a.amount - b.amount;
 }
 
-function sortPrice() {
-    let listBook = JSON.parse(JSON.stringify(danhSach));
-    for (let i = 0; i < listBook.length - 1; i++) {
-        for (let j = i+1; j < listBook.length; j++) {
-            if(listBook[i].price > listBook[j].price){
-                let temp = listBook[i];
-                listBook[i] = listBook[j];
-                listBook[j] = temp;
-            }
-        }
-    }
-    listBook = printListBook(listBook);
-    prinpt(listBook);
+function sortPrice(a, b) {
+    return a.price - b.price;
 }
-function sortTotal() {
-    let listBook = JSON.parse(JSON.stringify(danhSach));
-    for (let i = 0; i < listBook.length - 1; i++) {
-        for (let j = i+1; j < listBook.length; j++) {
-            if(listBook[i].amount * listBook[i].price > listBook[j].amount*listBook[j].price ){
-                let temp = listBook[i];
-                listBook[i] = listBook[j];
-                listBook[j] = temp;
-            }
-        }
-    }
-    listBook = printListBook(listBook);
-    prinpt(listBook);
+function sortTotal(a, b) {
+    return a.amount * a.price - b.amount * b.price;
 }
+
+//tìm theo tên , số lượng, lọc theo đơn giá, lọc theo tổng giá trị
+// var findName;
+function findFilter() {
+    let isExitFilter = false;
+    while (true) {
+        isExitFilter = false;
+        let sttFind = Number(prompt("1. Tìm theo tên\n"+"2. Lọc theo đơn giá\n" + "3. Lọc theo tổng giá trị"));
+        switch (sttFind) {
+            case 1:
+                let findName = prompt("Nhập tên sách cần tìm: ");
+                function filterName(arr) {
+                    let listBookName = arr.name.toUpperCase().indexOf(findName.toUpperCase())
+                        return listBookName >=0 ;
+                }
+                let newListFilterName = danhSach.filter(filterName,findName);
+                console.log(newListFilterName);
+                
+                break;
+            case 2:
+                let filterAmount = Number(prompt("Nhap so: "));
+                function filterAmount(arr) {
+                    return arr.amount >=filterAmount;
+                }
+                let newListFilterAmount = danhSach.filter(filterAmount);
+                console.log(newListFilterAmount);
+                
+                break;
+            case 3:
+                
+                break;    
+            default:
+                isExitFilter = true;
+                break;
+        }
+        if(isExitFilter);
+        break;
+    }
+}
+

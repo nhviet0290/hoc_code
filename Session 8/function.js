@@ -210,3 +210,103 @@
 // let show = timUoc(100);
 // console.log(show);
 
+let listBook = [
+    {
+        'name': "sach 1",
+        amount:10,
+        price: 20000
+    },
+    {
+        'name': "sach 2",
+        amount:20,
+        price: 59000
+    },
+    {
+        'name': "sach 3",
+        amount:50,
+        price: 30000
+    },
+    {
+        'name': "sach 34",
+        amount:100,
+        price: 99000
+    }
+]
+
+// let listNumber = [12,8,3,5,4,7,2,6,9];
+// listNumber.sort(function(a,b){return a-b})
+// console.log(listNumber);
+// listBook.sort(function(b, a){
+//     return a.price - b.price;
+// })
+// console.log(listBook);
+// listBook.sort(function(a,b){
+//     return a.amount - b.amount;
+// })
+// console.log(listBook);
+
+// function sortAmountAsc(a,b) {
+//     return a - b;
+// }
+// listBook.sort(sortAmountAsc);
+// console.log(listBook);
+// function sortAmountDesc(b,a) {
+//     return a - b;
+// }
+// listBook.sort(sortAmountDesc);
+// console.log(listBook);
+
+// function filterBook(arr) {
+//     return arr.amount >= 12;
+// }
+// let newArr = listBook.filter(filterBook);
+// console.log(newArr);
+
+// function filterBetween(arr) {
+//     return arr.amount > 12 && arr.amount <70;
+// }
+// let newArr1 = listBook.filter(filterBetween);
+// console.log(newArr1);
+
+
+// function filterSum(arr) {
+//     return arr.amount * arr.price <=300000 ;
+// }
+// let newArr2 = listBook.filter(filterSum);
+// console.log(newArr2);
+
+let findName = prompt("Nhap ten can tim: ")
+function filterBook3(arr) {
+    let result = arr.name.toUpperCase().indexOf(findName.toUpperCase());
+    return result  >= 0;
+}
+let newArr3 = listBook.filter(filterBook3);
+console.log(newArr3);
+
+// let n = Number(prompt("Nhap so: "));
+// function giaiThua(n) {
+//     if(n==0){
+//         return 1;
+//     }
+//     return n * giaiThua(n-1);
+// }
+// let ketQua = giaiThua(n);
+// console.log(ketQua);
+
+// let x = Number(prompt("Nhap so x: "));
+// let y = Number(prompt("Nhap so y: "));
+// function xMuY(x,y) {
+//     if(y==0){
+//         return 1;
+//     }
+//     return x * xMuY(x,y-1);
+// }
+// let ketQua1 = xMuY(x,y);
+// console.log(ketQua1);
+
+function sortArr(a,b){
+    return a.amount - b.amount;
+}
+
+let newList = listBook.sort(sortArr);
+console.log(newList);
