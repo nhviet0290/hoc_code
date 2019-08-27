@@ -75,13 +75,16 @@ function printListBook(array) {
         m += 'STT : BookDetail: ';
         for (let index = 0; index < array.length; index++) {
             const book = array[index];
-            m += '\n' + `${index +1}: Name: ${book.name}, price: ${book.price}, Amount: ${book.amount}`;
+            m += <p>`${index +1}: Name: ${book.name}, price: ${book.price}, Amount: ${book.amount}`</p>;
             
         }
         return m;
     } 
 }
-
+function showListBook() {
+    let listBook = printListBook(danhSach);
+    prinpt(listBook);
+}
 
 function addNewBook() {
     let newBookName = prompt("Nhập tên sách: ");
@@ -249,3 +252,9 @@ function findFilter() {
     }
 }
 
+
+
+function optionOne() {
+    let printListBook(listBook);
+
+}
