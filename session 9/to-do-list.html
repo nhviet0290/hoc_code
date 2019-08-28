@@ -12,14 +12,22 @@
 <body>
     <script src="to-do-list.js"></script>
     <input id="addList" placeholder="To do list" onkeyup="keyPress(event)">
-    <table border="1">
+    <table id="data" border="1">
         <tr>
             <th>STT</th>
             <th>Content</th>
             <th>Done</th>
             <th>Action</th>
-        </tr id = "data"><tr>
         </tr>
+      <tr>
+          <td >
+              <ol id ="STT"></ol>
+          </td>
+          <td id ="content"></td>
+          <td id ="done"></td>
+          <td id ="action"></td>
+      </tr>
+
     </table>
 </body>
 </html>
