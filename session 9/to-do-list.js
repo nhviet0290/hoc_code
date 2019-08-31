@@ -1,14 +1,11 @@
-let no = 0;
+let toDolist = {};
+let allList = [];
 function keyPress(event) {
     if (event.keyCode == 13) {
-        let table = document.getElementById("data");
-        let row = table.insertRow(-1);
-        let stt = row.insertCell(0);
-        let ol = document.createElement("ol");
-        let li = document.createElement("li");
-        ol.appendChild(li);
-        stt.appendChild(ol);
-        let content = row.insertCell();
-        content.innerHTML = document.getElementById("addList").value;
-}
+        let table = document.getElementById("data").incertRow;
+       }
+    }
+
+function dataToArray() {
+    toDolist.push(document.getElementById("addList").value);
 }
