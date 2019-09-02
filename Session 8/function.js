@@ -82,7 +82,7 @@
 // inThongTin(person,n);
 
 
-//findMax
+// findMax
 // let a = 1;
 // let b = 2;
 // let c = 3;
@@ -115,7 +115,7 @@
 // let y = 3;
 // xMuY(x,y);
 
-//Function in thông tin tung sinh vien tu danh sach
+// Function in thông tin tung sinh vien tu danh sach
 // function inThongtin(array) {
 //     for (let index = 0; index < array.length; index++) {
 //         let object = array[index];
@@ -168,7 +168,7 @@
 //     soLuong : Number(prompt("Nhap so luong"))
 // }
 
-//nhap 2 so a,b 
+// nhap 2 so a,b 
 // function tinhTong(a, b) {
 //     return a + b;
 // }
@@ -210,28 +210,28 @@
 // let show = timUoc(100);
 // console.log(show);
 
-let listBook = [
-    {
-        'name': "sach 1",
-        amount:10,
-        price: 20000
-    },
-    {
-        'name': "sach 2",
-        amount:20,
-        price: 59000
-    },
-    {
-        'name': "sach 3",
-        amount:50,
-        price: 30000
-    },
-    {
-        'name': "sach 34",
-        amount:100,
-        price: 99000
-    }
-]
+// let listBook = [
+//     {
+//         'name': "sach 1",
+//         amount:10,
+//         price: 20000
+//     },
+//     {
+//         'name': "sach 2",
+//         amount:20,
+//         price: 59000
+//     },
+//     {
+//         'name': "sach 3",
+//         amount:50,
+//         price: 30000
+//     },
+//     {
+//         'name': "sach 34",
+//         amount:100,
+//         price: 99000
+//     }
+// ]
 
 // let listNumber = [12,8,3,5,4,7,2,6,9];
 // listNumber.sort(function(a,b){return a-b})
@@ -275,13 +275,13 @@ let listBook = [
 // let newArr2 = listBook.filter(filterSum);
 // console.log(newArr2);
 
-let findName = prompt("Nhap ten can tim: ")
-function filterBook3(arr) {
-    let result = arr.name.toUpperCase().indexOf(findName.toUpperCase());
-    return result  >= 0;
-}
-let newArr3 = listBook.filter(filterBook3);
-console.log(newArr3);
+// let findName = prompt("Nhap ten can tim: ")
+// function filterBook3(arr) {
+//     let result = arr.name.toUpperCase().indexOf(findName.toUpperCase());
+//     return result  >= 0;
+// }
+// let newArr3 = listBook.filter(filterBook3);
+// console.log(newArr3);
 
 // let n = Number(prompt("Nhap so: "));
 // function giaiThua(n) {
@@ -304,9 +304,9 @@ console.log(newArr3);
 // let ketQua1 = xMuY(x,y);
 // console.log(ketQua1);
 
-function sortArr(a,b){
-    return a.amount - b.amount;
-}
+// function sortArr(a,b){
+//     return a.amount - b.amount;
+// }
 
-let newList = listBook.sort(sortArr);
-console.log(newList);
+// let newList = listBook.sort(sortArr);
+// console.log(newList);
