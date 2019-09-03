@@ -1,12 +1,14 @@
 let toDoList = [];
+let no = 0;
 function keyPress(event) {
     if (event.keyCode == 13) {
-        dataToArray();
-        let count = toDoList.length;
+        // dataToArray();
+        no += 1
+        // let count = toDoList.length;
         let table = document.getElementById("data");
         let row = table.insertRow(-1);
         let stt = row.insertCell(0);
-        stt.innerHTML = count;
+        stt.innerHTML = no;
         let content = row.insertCell(-1);
         content.innerHTML = document.getElementById("addList").value;
         let btn = row.insertCell(-1);
@@ -21,15 +23,18 @@ function keyPress(event) {
         let buttonDel = document.createElement("button");
         buttonDel.innerHTML = "Xóa";
         buttonDel.addEventListener('click', function delData() {
-            buttonDel.parentNode.parentNode.classList.add('hidden')
-            let i = Number(buttonDel.parentNode.parentNode.children[0].childNodes[0].data);
-            console.log(toDoList.length);
-            for (let index = i+1; index < toDoList.length+1; index++) {
-                let sttAfterdel = Number(document.getElementsByTagName("tr")[index].children[0].childNodes[0].data)
-                sttAfterdel  -= 1;
-                document.getElementsByTagName("tr")[index].children[0].childNodes[0].data = sttAfterdel;
+            let i = Number(buttonDel.parentNode.parentNode.childNodes[0].childNodes[0].data);
+            buttonDel.parentNode.parentNode.remove();
+
+            typeof i;
+            
+            for (let index = i+1; index <= no; index++) {
+                console.dir(document.getElementsByTagName("tr"));
                 
+                // sttAfterDel -= 1;
+                // document.getElementsByTagName("tr")[index].childNodes[0].childNodes[0] = sttAfterDel;
             }
+            
             
         }
 
