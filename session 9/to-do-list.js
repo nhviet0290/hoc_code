@@ -25,22 +25,17 @@ function keyPress(event) {
         buttonDel.addEventListener('click', function delData() {
             let i = Number(buttonDel.parentNode.parentNode.childNodes[0].childNodes[0].data);
             buttonDel.parentNode.parentNode.remove();
-
-            typeof i;
-            
-            for (let index = i+1; index <= no; index++) {
-                console.dir(document.getElementsByTagName("tr"));
-                
-                // sttAfterDel -= 1;
-                // document.getElementsByTagName("tr")[index].childNodes[0].childNodes[0] = sttAfterDel;
+            for (let index = i; index <= no; index++) {
+                document.getElementsByTagName("tr")[index].children[0].childNodes[0].data -=1;
             }
-            
-            
-        }
-
-        )
+            no -= 1; 
+            console.log(no);
+        } 
+        ) 
         deleteData.appendChild(buttonDel);
        }
+       
+       
     }
 
 function dataToArray() {
